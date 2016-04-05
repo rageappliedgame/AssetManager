@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -66,6 +66,9 @@
     </Compile>
     <Compile Include="..\RageAssetManager\IWebServiceRequest.cs">
       <Link>IWebServiceRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\IWebServiceRequest2.cs">
+      <Link>IWebServiceRequest2.cs</Link>
     </Compile>
     <Compile Include="..\RageAssetManager\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
