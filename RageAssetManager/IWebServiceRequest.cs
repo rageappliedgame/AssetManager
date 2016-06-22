@@ -21,32 +21,113 @@ namespace AssetPackage
     using System.Collections.Generic;
 
     /// <summary>
-    /// Interface for web service response.
+    /// Request Settings.
     /// </summary>
-    ///
-    /// <remarks>
-    /// Implemented by assets requesting result notification of a
-    /// IWebServiceRequest.
-    /// </remarks>
-    public interface IWebServiceResponse
+    public class RequestSetttings
     {
         /// <summary>
-        /// Called when a WebRequest results in an Error.
+        /// The method.
         /// </summary>
-        ///
-        /// <param name="url"> URL of the document. </param>
-        /// <param name="msg"> The error message. </param>
-        void Error(string url, string msg);
+        public string method;
 
         /// <summary>
-        /// Called after a Successfull WebRequest (no Exceptions).
+        /// URI of the document.
+        /// </summary>
+        public Uri uri;
+
+        /// <summary>
+        /// The request headers.
+        /// </summary>
+        public Dictionary<String, String> requestHeaders;
+
+        /// <summary>
+        /// The body.
+        /// </summary>
+        public String body;
+
+        /// <summary>
+        /// The allowed responses.
+        /// </summary>
+        public List<int> allowedResponsCodes;
+
+        /// <summary>
+        /// Initializes a new instance of the AssetPackage.requestParameters
+        /// class.
+        /// </summary>
+        public RequestSetttings()
+        {
+            method = "GET";
+            requestHeaders = new Dictionary<String, String>();
+            body = String.Empty;
+            allowedResponsCodes = new List<int>();
+            allowedResponsCodes.Add(200);
+        }
+    }
+
+    /// <summary>
+    /// Response results.
+    /// </summary>
+    public class RequestResponse : RequestSetttings
+    {
+        /// <summary>
+        /// The response code.
+        /// </summary>
+        public int responseCode;
+
+        /// <summary>
+        /// Message describing the respons.
+        /// </summary>
+        public string responsMessage;
+
+        /// <summary>
+        /// The response headers.
+        /// </summary>
+        public Dictionary<String, String> responseHeaders;
+
+        /// <summary>
+        /// Initializes a new instance of the AssetPackage.RequestResponse class.
+        /// </summary>
+        public RequestResponse() : base()
+        {
+            responseCode = 0;
+            responsMessage = String.Empty;
+
+            responseHeaders = new Dictionary<String, String>();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the AssetPackage.RequestResponse class.
         /// </summary>
         ///
-        /// <param name="url">     URL of the document. </param>
-        /// <param name="code">    The code. </param>
-        /// <param name="headers"> The headers. </param>
-        /// <param name="body">    The body. </param>
-        void Success(string url, int code, Dictionary<string, string> headers, string body);
+        /// <remarks>
+        /// The body is not copied as it will contain thee response body instead.
+        /// </remarks>
+        ///
+        /// <param name="settings"> Options for controlling the operation. </param>
+        public RequestResponse(RequestSetttings settings) : this()
+        {
+            method = settings.method;
+            requestHeaders = settings.requestHeaders;
+            uri = settings.uri;
+            body = String.Empty;
+
+            allowedResponsCodes = settings.allowedResponsCodes;
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether result is allowed.
+        /// </summary>
+        ///
+        /// <value>
+        /// true if result allowed, false if not.
+        /// </value>
+        public bool ResultAllowed
+        {
+            get
+            {
+                return allowedResponsCodes.Contains(responseCode);
+            }
+        }
     }
 
     /// <summary>
@@ -55,28 +136,19 @@ namespace AssetPackage
     ///
     /// <remarks>
     /// Implemented on a Bridge.
-    /// Will be replaced by the code from IWebServiceRequest2 once tested.
     /// </remarks>
     public interface IWebServiceRequest
     {
-
-#warning Add Tag or Data parameter to this call so we can identify it in IWebServiceResponse?
-
         /// <summary>
         /// Web service request.
         /// </summary>
         ///
-        /// <param name="method">      The method. </param>
-        /// <param name="uri">         URI of the document. </param>
-        /// <param name="headers">     The headers. </param>
-        /// <param name="body">        The body. </param>
-        /// <param name="response">    The response. </param>
-        void WebServiceRequest(
-            string method,
-            Uri uri,
-            Dictionary<string, string> headers,
-            string body,
-            IWebServiceResponse response
-            );
+        /// <returns>
+        /// A RequestResponse.
+        /// </returns>
+        ///
+        /// <param name="requestSettings">  Options for controlling the operation. </param>
+        /// <param name="requestResponse"> The request response. </param>
+        void WebServiceRequest(RequestSetttings requestSettings, out RequestResponse requestResponse);
     }
 }

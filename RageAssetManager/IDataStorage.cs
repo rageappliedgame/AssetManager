@@ -18,7 +18,6 @@
 namespace AssetPackage
 {
     using System;
-    using System.Collections.Generic;
 
     /// <summary>
     /// Interface for data storage.

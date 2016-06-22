@@ -49,10 +49,11 @@
     <Compile Include="IDefaultSettings.cs" />
     <Compile Include="ILog.cs" />
     <Compile Include="ISettings.cs" />
+    <Compile Include="IWebServiceRequestAsync.cs" />
     <Compile Include="IWebServiceRequest.cs" />
-    <Compile Include="IWebServiceRequest2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Messages.cs" />
+    <Compile Include="RageExtensions.cs" />
     <Compile Include="RageVersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,8 +66,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>"c:\Program Files (x86)\Mono\bin\pdb2mdb.bat" "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

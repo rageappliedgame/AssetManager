@@ -186,29 +186,6 @@ namespace AssetManagerPackage
                 return textWriter.ToString();
             }
         }
-
-        /// <summary>
-        /// A string writer utf-8.
-        /// </summary>
-        ///
-        /// <remarks>
-        /// Fix-up for XDocument Serialization defaulting to utf-16.
-        /// </remarks>
-        internal class StringWriterUtf8 : StringWriter
-        {
-            #region Properties
-
-            //public StringWriterUtf8(StringBuilder sb)
-            //    : base(sb)
-            //{
-            //}
-            public override Encoding Encoding
-            {
-                get { return Encoding.UTF8; }
-            }
-
-            #endregion Properties
-        }
     }
 
     /// <summary>

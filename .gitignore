@@ -234,3 +234,6 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/RageAssetManager_Portable/PortabilityAnalysis(1).html
+/RageAssetManager_Portable/PortabilityAnalysis(2).html
+/RageAssetManager_Portable/PortabilityAnalysis.html

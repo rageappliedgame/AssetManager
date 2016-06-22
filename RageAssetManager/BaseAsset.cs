@@ -51,6 +51,7 @@ namespace AssetPackage
             //{
             //    Console.WriteLine("{0}", name);
             //}
+
             String xml = VersionAndDependencies();
             if (!String.IsNullOrEmpty(xml))
             {
@@ -420,7 +421,7 @@ namespace AssetPackage
         {
             // Not compatible with PCL
             // 
-            //foreach (String res in GetType().Assembly.GetManifestResourceNames())
+            //foreach (String res in GetType().Assembly().GetManifestResourceNames())
             //{
             //    Debug.WriteLine(res);
             //}
@@ -472,14 +473,14 @@ namespace AssetPackage
             //using (Stream stream = Assembly.GetAssembly(GetType()).GetManifestResourceStream(path))
 
             // Console.WriteLine("Loading Resources: {0}",path);
-#if PORTABLE
-            //! 2) Fails to compile on non portable projects as GetTypeInfo is missing. 
-            //!    GetType.Assembly does not exits in portable projects.
-            using (Stream stream = GetType().GetTypeInfo().Assembly.GetManifestResourceStream(path))
-#else
-            //! 3) Fail to compile on Unity3D/WinPhone (getAssembly fails) but the code works!
-            using (Stream stream = GetType().Assembly.GetManifestResourceStream(path))
-#endif
+            //#if PORTABLE
+            //            //! 2) Fails to compile on non portable projects as GetTypeInfo is missing. 
+            //            //!    GetType.Assembly does not exits in portable projects.
+            //            using (Stream stream = GetType().GetTypeInfo().Assembly.GetManifestResourceStream(path))
+            //#else
+            //            //! 3) Fail to compile on Unity3D/WinPhone (getAssembly fails) but the code works!
+            using (Stream stream = GetType().Assembly().GetManifestResourceStream(path))
+            //#endif
             {
                 if (stream != null)
                 {
@@ -518,28 +519,5 @@ namespace AssetPackage
         }
 
         #endregion Methods
-
-        #region Nested Types
-
-        /// <summary>
-        /// A string writer utf-8.
-        /// </summary>
-        ///
-        /// <remarks>
-        /// Fix-up for XDocument Serialization defaulting to utf-16.
-        /// </remarks>
-        internal class StringWriterUtf8 : StringWriter
-        {
-            #region Properties
-
-            public override Encoding Encoding
-            {
-                get { return Encoding.UTF8; }
-            }
-
-            #endregion Properties
-        }
-
-        #endregion Nested Types
     }
 }
