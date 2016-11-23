@@ -14,6 +14,10 @@
         /// A Type extension method that assemblies the given type.
         /// </summary>
         ///
+        /// <remarks>
+        /// Fix for incompatability between normal and portable code.
+        /// </remarks>
+        ///
         /// <param name="type"> The type to act on. </param>
         ///
         /// <returns>
@@ -27,6 +31,28 @@
             return type.Assembly;
 #endif
         }
+
+#if PORTABLE
+
+        /// <summary>
+        /// A Type extension method that gets a property.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Fix for incompatability between normal and portable code.
+        /// </remarks>
+        ///
+        /// <param name="type"> The type to act on. </param>
+        /// <param name="name"> The name. </param>
+        ///
+        /// <returns>
+        /// The property.
+        /// </returns>
+        public static PropertyInfo GetProperty(this Type type, String name)
+        {
+            return type.GetRuntimeProperty(name);
+        }
+#endif
 
         /// <summary>
         /// A Type extension method that query if 'type' is class.
@@ -185,7 +211,7 @@
     /// </remarks>
     public class StringWriterUtf8 : StringWriter
     {
-         #region Properties
+        #region Properties
 
         /// <summary>
         /// Gets the <see cref="T:System.Text.Encoding" /> in which the output is
