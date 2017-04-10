@@ -51,6 +51,11 @@ namespace AssetPackage
         public List<int> allowedResponsCodes;
 
         /// <summary>
+        /// True to binary response.
+        /// </summary>
+        public Boolean hasBinaryResponse;
+
+        /// <summary>
         /// Initializes a new instance of the AssetPackage.requestParameters
         /// class.
         /// </summary>
@@ -61,6 +66,7 @@ namespace AssetPackage
             body = String.Empty;
             allowedResponsCodes = new List<int>();
             allowedResponsCodes.Add(200);
+            hasBinaryResponse = false;
         }
     }
 
@@ -84,11 +90,17 @@ namespace AssetPackage
         /// </summary>
         public Dictionary<String, String> responseHeaders;
 
+        public byte[] binaryResponse;
+
         /// <summary>
         /// Initializes a new instance of the AssetPackage.RequestResponse class.
         /// </summary>
         public RequestResponse() : base()
         {
+            hasBinaryResponse = false;
+
+            binaryResponse = new byte[0];
+
             responseCode = 0;
             responsMessage = String.Empty;
 
@@ -112,6 +124,8 @@ namespace AssetPackage
             body = String.Empty;
 
             allowedResponsCodes = settings.allowedResponsCodes;
+
+            hasBinaryResponse = settings.hasBinaryResponse;
         }
 
         /// <summary>
