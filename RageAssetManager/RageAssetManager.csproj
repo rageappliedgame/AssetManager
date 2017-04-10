@@ -57,6 +57,9 @@
     <Compile Include="RageVersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="RageAssetManager.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="VersionAndDependencies.xsd">
       <SubType>Designer</SubType>
     </None>

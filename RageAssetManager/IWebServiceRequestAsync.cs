@@ -28,6 +28,7 @@ namespace AssetPackage
     /// Implemented by assets requesting result notification of a
     /// IWebServiceRequest.
     /// </remarks>
+    [Obsolete("Use IWebServiceRequest instead")]
     public interface IWebServiceResponseAsync
     {
         /// <summary>

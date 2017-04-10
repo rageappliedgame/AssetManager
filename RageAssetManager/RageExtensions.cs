@@ -33,7 +33,6 @@
         }
 
 #if PORTABLE
-
         /// <summary>
         /// A Type extension method that gets a property.
         /// </summary>
