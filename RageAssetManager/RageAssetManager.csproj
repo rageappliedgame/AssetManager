@@ -43,6 +43,7 @@
     <Compile Include="AssetManager.cs" />
     <Compile Include="BaseAsset.cs" />
     <Compile Include="BaseSettings.cs" />
+    <Compile Include="IAppend.cs" />
     <Compile Include="IAsset.cs" />
     <Compile Include="IBridge.cs" />
     <Compile Include="IDataStorage.cs" />
