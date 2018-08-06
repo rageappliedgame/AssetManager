@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>RageAssetManager</id>
+    <licenseUrl>https://github.com/rageappliedgame/</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <releaseNotes>This is the initial release.</releaseNotes>
+    <tags>RAGE Asset</tags>
+    <dependencies />
+    <version>1.0.0.0</version>
+    <authors>Open University of the Netherlands</authors>
+    <projectUrl>http://rageproject.eu</projectUrl>
+    <copyright>Copyright © 2018</copyright>
+    <description>RageAssetManager</description>
+  </metadata>
+  <files>
+    <file src="RageAssetManager\bin\Release\RageAssetManager.dll" target="lib\net3.5\RageAssetManager.dll" />
+    <file src="RageAssetManager\AssetManager.cs" target="src" />
+    <file src="RageAssetManager\BaseAsset.cs" target="src" />
+    <file src="RageAssetManager\BaseSettings.cs" target="src" />
+    <file src="RageAssetManager\IAppend.cs" target="src" />
+    <file src="RageAssetManager\IAsset.cs" target="src" />
+    <file src="RageAssetManager\IBridge.cs" target="src" />
+    <file src="RageAssetManager\IDataStorage.cs" target="src" />
+    <file src="RageAssetManager\IDefaultSettings.cs" target="src" />
+    <file src="RageAssetManager\ILog.cs" target="src" />
+    <file src="RageAssetManager\ISettings.cs" target="src" />
+    <file src="RageAssetManager\IWebServiceRequestAsync.cs" target="src" />
+    <file src="RageAssetManager\IWebServiceRequest.cs" target="src" />
+    <file src="RageAssetManager\Properties\AssemblyInfo.cs" target="src\Properties" />
+    <file src="RageAssetManager\Messages.cs" target="src" />
+    <file src="RageAssetManager\RageExtensions.cs" target="src" />
+    <file src="RageAssetManager\RageVersionInfo.cs" target="src" />
+    <file src="RageAssetManager\Resources\BaseAsset.VersionAndDependencies.xml" target="src\Resources" />
+    <file src="RageAssetManager_Core\bin\Release\netcoreapp2.1\RageAssetManager_Core.dll" target="lib\netcoreapp2.1\RageAssetManager_Core.dll" />
+    <file src="RageAssetManager_Portable\bin\Release\RageAssetManager_Portable.dll" target="lib\portable-net45+win8+wpa81+wp8\RageAssetManager_Portable.dll" />
+    <file src="RageAssetManager_Portable\bin\Release\RageAssetManager_Portable.XML" target="lib\portable-net45+win8+wpa81+wp8\RageAssetManager_Portable.XML" />
+  </files>
+</package>
