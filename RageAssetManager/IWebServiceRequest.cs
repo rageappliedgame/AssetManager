@@ -90,6 +90,9 @@ namespace AssetPackage
         /// </summary>
         public Dictionary<String, String> responseHeaders;
 
+        /// <summary>
+        /// The binary response.
+        /// </summary>
         public byte[] binaryResponse;
 
         /// <summary>

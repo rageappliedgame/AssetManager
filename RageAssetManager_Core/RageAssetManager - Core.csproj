@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09785B65-B8E2-422A-B048-783937F6BE54}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AssetManagerPackage</RootNamespace>
+    <AssemblyName>RageAssetManager_Core</AssemblyName>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileAlignment>512</FileAlignment>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <PackageId>RageAssetManager</PackageId>
+    <Company>Open University of the Netherlands</Company>
+    <Product>RageAssetManager</Product>
+    <Copyright>Copyright © 2018</Copyright>
+    <Authors>RAGE</Authors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PORTABLE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\RageAssetManager_Core.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\RageAssetManager\AssetManager.cs">
+      <Link>AssetManager.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\BaseAsset.cs">
+      <Link>BaseAsset.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\BaseSettings.cs">
+      <Link>BaseSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\IAsset.cs">
+      <Link>IAsset.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\IBridge.cs">
+      <Link>IBridge.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\IDataStorage.cs">
+      <Link>IDataStorage.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\IDefaultSettings.cs">
+      <Link>IDefaultSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\ILog.cs">
+      <Link>ILog.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\ISettings.cs">
+      <Link>ISettings.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\IWebServiceRequest.cs">
+      <Link>IWebServiceRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\IWebServiceRequestAsync.cs">
+      <Link>IWebServiceRequestAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\Messages.cs">
+      <Link>Messages.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\RageExtensions.cs">
+      <Link>RageExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\RageAssetManager\RageVersionInfo.cs">
+      <Link>RageVersionInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\RageAssetManager\VersionAndDependencies.xsd">
+      <SubType>Designer</SubType>
+      <Link>VersionAndDependencies.xsd</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\RageAssetManager\Resources\BaseAsset.VersionAndDependencies.xml">
+      <Link>Resources\BaseAsset.VersionAndDependencies.xml</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
