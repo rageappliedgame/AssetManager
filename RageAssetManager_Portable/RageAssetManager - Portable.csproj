@@ -52,6 +52,9 @@
     <Compile Include="..\RageAssetManager\IBridge.cs">
       <Link>IBridge.cs</Link>
     </Compile>
+    <Compile Include="..\RageAssetManager\IDataArchive.cs">
+      <Link>IDataArchive.cs</Link>
+    </Compile>
     <Compile Include="..\RageAssetManager\IDataStorage.cs">
       <Link>IDataStorage.cs</Link>
     </Compile>

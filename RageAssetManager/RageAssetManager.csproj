@@ -46,6 +46,7 @@
     <Compile Include="IAppend.cs" />
     <Compile Include="IAsset.cs" />
     <Compile Include="IBridge.cs" />
+    <Compile Include="IDataArchive.cs" />
     <Compile Include="IDataStorage.cs" />
     <Compile Include="IDefaultSettings.cs" />
     <Compile Include="ILog.cs" />
@@ -70,7 +71,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent Condition=" '$(OS)' == 'Windows_NT' ">"c:\Program Files (x86)\Mono\bin\pdb2mdb.bat" "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent Condition=" '$(OS)' == 'Windows_NT' ">IF EXIST "C:\Program Files (x86)\Mono\bin\pdb2mdb.bat" ("C:\Program Files (x86)\Mono\bin\pdb2mdb.bat" "$(TargetPath)")</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
