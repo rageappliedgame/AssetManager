@@ -31,10 +31,11 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\RageAssetManager_Portable.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\RageAssetManager\AssetManager.cs">
