@@ -7,6 +7,9 @@ namespace AssetPackage
 {
     using System;
 
+    /// <summary>
+    /// Interface for data archive.
+    /// </summary>
     public interface IDataArchive
     {
         /// <summary>
