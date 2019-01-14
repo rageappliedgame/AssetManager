@@ -60,9 +60,6 @@ namespace AssetPackage
     /// </remarks>
     public interface IWebServiceRequestAsync
     {
-
-#warning Add Tag or Data parameter to this call so we can identify it in IWebServiceResponse?
-
         /// <summary>
         /// Web service request.
         /// </summary>
